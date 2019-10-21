@@ -14,16 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/login',function()
-{
-	return view('Login');
-});
-/*Route::post('/welcome1.php',function()
-{
-	return console.log('welcome');
-});*/
 
-Route::get('/','mainController@index');
-Route::get('/checklogin','mainController@checklogin');
-Route::get('/successlogin','mainController@successlogin');
-Route::get('/logout','mainController@logout');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
